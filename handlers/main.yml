@@ -1,0 +1,4 @@
+---
+- name: reload networking
+  sudo: true
+  service: name=networking state=reloaded

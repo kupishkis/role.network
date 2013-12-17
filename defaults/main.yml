@@ -1,0 +1,9 @@
+---
+interfaces:
+  - name: br0
+    type: auto
+    config: dhcp
+    options:
+      - bridge_ports eth0
+      - bridge_fd 0
+      - bridge_maxwait 0

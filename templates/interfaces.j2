@@ -1,0 +1,16 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# {{ansible_managed}}
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+{% for interface in interfaces %}
+{{interface.type}} {{interface.name}}
+iface {{interface.name}} inet {{interface.config}}
+{% for option in interface.options %}
+    {{option}}
+{% endfor %}
+{% endfor %}

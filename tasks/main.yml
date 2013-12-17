@@ -1,0 +1,11 @@
+---
+- name: ensure interfaces are configured
+  sudo: true
+  template: >
+    owner=root
+    group=root
+    mode=644
+    src=interfaces.j2
+    dest=/etc/network/interfaces
+  notify: reload networking
+  when: interfaces is defined
